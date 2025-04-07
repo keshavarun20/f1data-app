@@ -1,1 +1,1 @@
-web: java -jar target/f1dataapp-0.0.1-SNAPSHOT.jar
+web: ./mvnw spring-boot:run
