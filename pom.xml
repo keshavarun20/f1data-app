@@ -28,6 +28,7 @@
 	</scm>
 	<properties>
 		<java.version>17</java.version>
+        <lombok.version>1.18.36</lombok.version>
 	</properties>
 	<dependencies>
 		<dependency>
@@ -74,12 +75,13 @@
 				<version>3.11.0</version> <!-- Add version -->
 				<configuration>
 					<release>17</release> <!-- Tell Maven to target Java 17 -->
-					<annotationProcessorPaths>
-						<path>
-							<groupId>org.projectlombok</groupId>
-							<artifactId>lombok</artifactId>
-						</path>
-					</annotationProcessorPaths>
+                    <annotationProcessorPaths>
+                        <path>
+                            <groupId>org.projectlombok</groupId>
+                            <artifactId>lombok</artifactId>
+                            <version>${lombok.version}</version>  <!-- add this -->
+                        </path>
+                    </annotationProcessorPaths>
 				</configuration>
 			</plugin>
 
