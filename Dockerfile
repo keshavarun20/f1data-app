@@ -1,5 +1,5 @@
-# Use the official OpenJDK 17 image as a base
-FROM openjdk:17-jdk-slim as builder
+# Use Eclipse Temurin (official OpenJDK successor) as builder
+FROM eclipse-temurin:17-jdk-jammy as builder
 
 # Set working directory
 WORKDIR /app
@@ -21,8 +21,8 @@ COPY src /app/src
 # Build the application
 RUN ./mvnw package -DskipTests
 
-# Use a new image to run the application (lighter image)
-FROM openjdk:17-jdk-slim
+# Use JRE (not JDK) for the runtime — lighter
+FROM eclipse-temurin:17-jre-jammy
 
 # Set working directory
 WORKDIR /app
